@@ -5,7 +5,7 @@ import {
 import { onGetDomainProductsAndConnectedAccountId } from '@/actions/payments'
 import PortalForm from '@/components/forms/portal/portal-form'
 import React from 'react'
-
+export const dynamic = 'force-dynamic';
 const CustomerPaymentPage = async ({
   params,
 }: {

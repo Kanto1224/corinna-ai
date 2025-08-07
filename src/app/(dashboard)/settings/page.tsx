@@ -5,7 +5,7 @@ import DarkModetoggle from '@/components/settings/dark-mode'
 import React from 'react'
 
 type Props = {}
-
+export const dynamic = 'force-dynamic';
 const Page = (props: Props) => {
   return (
     <>

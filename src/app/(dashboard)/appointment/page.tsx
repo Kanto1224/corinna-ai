@@ -9,7 +9,7 @@ import { currentUser } from '@clerk/nextjs'
 import React from 'react'
 
 type Props = {}
-
+export const dynamic = 'force-dynamic';
 const Page = async (props: Props) => {
   const user = await currentUser()
 

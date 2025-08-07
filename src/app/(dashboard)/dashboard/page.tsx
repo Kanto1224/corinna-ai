@@ -18,7 +18,7 @@ import { DollarSign } from 'lucide-react'
 import React from 'react'
 
 type Props = {}
-
+export const dynamic = 'force-dynamic';
 const Page = async (props: Props) => {
   const clients = await getUserClients()
   const sales = await getUserBalance()

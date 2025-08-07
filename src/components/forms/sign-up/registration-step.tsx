@@ -6,56 +6,58 @@ import TypeSelectionForm from './type-selection-form'
 import dynamic from 'next/dynamic'
 import { Spinner } from '@/components/spinner'
 
+// Corrected 'loading' option
 const DetailForm = dynamic(() => import('./account-details-form'), {
-  ssr: false,
-  loading: Spinner,
+  ssr: false,
+  loading: () => <Spinner />,
 })
 
+// Corrected 'loading' option
 const OTPForm = dynamic(() => import('./otp-form'), {
-  ssr: false,
-  loading: Spinner,
+  ssr: false,
+  loading: () => <Spinner />,
 })
 
 type Props = {}
 
 const RegistrationFormStep = (props: Props) => {
-  const {
-    register,
-    formState: { errors },
-    setValue,
-  } = useFormContext()
-  const { currentStep } = useAuthContextHook()
-  const [onOTP, setOnOTP] = useState<string>('')
-  const [onUserType, setOnUserType] = useState<'owner' | 'student'>('owner')
+  const {
+    register,
+    formState: { errors },
+    setValue,
+  } = useFormContext()
+  const { currentStep } = useAuthContextHook()
+  const [onOTP, setOnOTP] = useState<string>('')
+  const [onUserType, setOnUserType] = useState<'owner' | 'student'>('owner')
 
-  setValue('otp', onOTP)
+  setValue('otp', onOTP)
 
-  switch (currentStep) {
-    case 1:
-      return (
-        <TypeSelectionForm
-          register={register}
-          userType={onUserType}
-          setUserType={setOnUserType}
-        />
-      )
-    case 2:
-      return (
-        <DetailForm
-          errors={errors}
-          register={register}
-        />
-      )
-    case 3:
-      return (
-        <OTPForm
-          onOTP={onOTP}
-          setOTP={setOnOTP}
-        />
-      )
-  }
+  switch (currentStep) {
+    case 1:
+      return (
+        <TypeSelectionForm
+          register={register}
+          userType={onUserType}
+          setUserType={setOnUserType}
+        />
+      )
+    case 2:
+      return (
+        <DetailForm
+          errors={errors}
+          register={register}
+        />
+      )
+    case 3:
+      return (
+        <OTPForm
+          onOTP={onOTP}
+          setOTP={setOnOTP}
+        />
+      )
+  }
 
-  return <div>RegistrationFormStep</div>
+  return <div>RegistrationFormStep</div>
 }
 
 export default RegistrationFormStep

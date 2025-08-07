@@ -5,7 +5,7 @@ import parse from 'html-react-parser'
 import React from 'react'
 
 type Props = { params: { id: string } }
-
+export const dynamic = 'force-dynamic';
 const PostPage = async ({ params }: Props) => {
   const post = await onGetBlogPost(params.id)
   console.log(parse(post?.content))

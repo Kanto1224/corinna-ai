@@ -6,7 +6,7 @@ import PortalForm from '@/components/forms/portal/portal-form'
 import React from 'react'
 
 type Props = { params: { domainid: string; customerid: string } }
-
+export const dynamic = 'force-dynamic';
 const CustomerSignUpForm = async ({ params }: Props) => {
   const questions = await onDomainCustomerResponses(params.customerid)
   const bookings = await onGetAllDomainBookings(params.domainid)
