@@ -17,15 +17,15 @@ const SignInPage = () => {
                 type="submit"
                 className="w-full"
               >
-                Submit
+                Anmelden
               </Button>
               <p>
-                Don’t have an account?{' '}
+                Noch kein Konto?{' '}
                 <Link
                   href="/auth/sign-up"
                   className="font-bold"
                 >
-                  Create one
+                  Jetzt registrieren
                 </Link>
               </p>
             </div>

@@ -77,14 +77,14 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
           <div className="flex gap-2">
             <Avatar className="w-20 h-20">
               <AvatarImage
-                src="https://github.com/shadcn.png"
-                alt="@shadcn"
+                src="/images/logo.png"
+                alt="Chatvise Logo"
               />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>CV</AvatarFallback>
             </Avatar>
             <div className="flex items-start flex-col">
               <h3 className="text-lg font-bold leading-none">
-                Sales Rep - Web Prodigies
+                Chatvise AI Assistant
               </h3>
               <p className="text-sm">{domainName.split('.com')[0]}</p>
               {realtimeMode?.mode && (

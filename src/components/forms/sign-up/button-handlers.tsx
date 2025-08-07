@@ -24,15 +24,15 @@ const ButtonHandler = (props: Props) => {
           type="submit"
           className="w-full"
         >
-          Create an account
+          Konto erstellen
         </Button>
         <p>
-          Already have an account?
+          Bereits ein Konto?
           <Link
             href="/auth/sign-in"
             className="font-bold"
           >
-            Sign In
+            Anmelden
           </Link>
         </p>
       </div>
@@ -56,15 +56,15 @@ const ButtonHandler = (props: Props) => {
                 ),
             })}
         >
-          Continue
+          Weiter
         </Button>
         <p>
-          Already have an account?{' '}
+          Bereits ein Konto?{' '}
           <Link
             href="/auth/sign-in"
             className="font-bold"
           >
-            Sign In
+            Anmelden
           </Link>
         </p>
       </div>
