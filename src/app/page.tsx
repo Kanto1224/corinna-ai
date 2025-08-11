@@ -27,6 +27,46 @@ import Image from 'next/image'
 import Link from 'next/link'
 // Removed fake demo chatbot import
 
+// Structured data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Chatvise",
+  "description": "Intelligenter KI-Chatbot für automatisierten Kundensupport, Lead-Generierung und Website-Integration",
+  "url": "https://chatvise.de",
+  "logo": "https://chatvise.de/images/logo.png",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Kostenloser Starter-Plan verfügbar"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Chester Roussos",
+    "url": "https://chatvise.de"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chatvise",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chatvise.de/images/logo.png"
+    }
+  },
+  "featureList": [
+    "24/7 Kundensupport",
+    "Lead-Generierung",
+    "Website-Integration",
+    "Mehrsprachigkeit",
+    "KI-gestützte Antworten",
+    "Benutzerfreundliche Oberfläche"
+  ]
+}
+
+
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
@@ -54,12 +94,17 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-orange-50/30">
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <NavBar />
       
       {/* Hero Section */}
-      <section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section id="hero" className="pt-20 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[600px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[500px] sm:min-h-[600px]">
             
             {/* Left Column - Content */}
             <motion.div
@@ -79,7 +124,7 @@ export default function Home() {
               </motion.div>
 
               <motion.div variants={fadeInUp} className="space-y-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                   <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
                     AI Chatbot für
                   </span>
@@ -89,27 +134,27 @@ export default function Home() {
                   </span>
                 </h1>
                 
-                                 <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
                    Integrieren Sie unseren intelligenten Chatbot in <span className="text-orange font-semibold">jede beliebige Website</span>. 
-                   <br /><br />
+                   <br className="hidden sm:block" /><br className="hidden sm:block" />
                    Automatisieren Sie <span className="text-orange font-semibold">Kundensupport</span>, Beratungsgespräche, generieren Sie Leads und steigern Sie Ihren Umsatz - 24/7 verfügbar.
                  </p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link href="/auth/sign-up">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-orange to-orange/80 hover:from-orange/90 hover:to-orange/70 text-white font-semibold px-8 py-4 rounded-full shadow-xl shadow-orange/25 hover:shadow-orange/40 transition-all duration-300 group text-lg"
+                    className="w-full sm:w-auto bg-gradient-to-r from-orange to-orange/80 hover:from-orange/90 hover:to-orange/70 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-xl shadow-orange/25 hover:shadow-orange/40 transition-all duration-300 group text-base sm:text-lg"
                   >
                     Kostenlos starten
-                    <ArrowRightCircleIcon className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRightCircleIcon className="ml-2 w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="bg-white/70 backdrop-blur-sm border-2 border-gray-200 hover:border-orange/50 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/90 transition-all duration-300"
+                  className="w-full sm:w-auto bg-white/70 backdrop-blur-sm border-2 border-gray-200 hover:border-orange/50 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white/90 transition-all duration-300"
                   onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Funktionen ansehen
@@ -117,18 +162,18 @@ export default function Home() {
               </motion.div>
 
               {/* Key Features */}
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-6 pt-4">
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 sm:gap-6 pt-4">
                 <div className="flex items-center gap-2 text-gray-600">
-                  <Check className="w-5 h-5 text-green-500" />
-                  <span className="font-medium">Einfache Integration</span>
+                  <Check className="w-4 sm:w-5 h-4 sm:h-5 text-green-500 flex-shrink-0" />
+                  <span className="font-medium text-sm sm:text-base">Einfache Integration</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-600">
-                  <Check className="w-5 h-5 text-green-500" />
-                  <span className="font-medium">24/7 verfügbar</span>
+                  <Check className="w-4 sm:w-5 h-4 sm:h-5 text-green-500 flex-shrink-0" />
+                  <span className="font-medium text-sm sm:text-base">24/7 verfügbar</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-600">
-                  <Check className="w-5 h-5 text-green-500" />
-                  <span className="font-medium">Mehrsprachig</span>
+                  <Check className="w-4 sm:w-5 h-4 sm:h-5 text-green-500 flex-shrink-0" />
+                  <span className="font-medium text-sm sm:text-base">Mehrsprachig</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -166,20 +211,20 @@ export default function Home() {
               />
 
               {/* Website Mockup Container */}
-              <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl p-6 shadow-2xl">
+              <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl p-3 sm:p-6 shadow-2xl">
                 {/* Browser Header */}
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <div className="bg-white rounded-full px-4 py-1 ml-4 text-sm text-gray-600 flex-1 max-w-xs">
+                  <div className="bg-white rounded-full px-3 sm:px-4 py-1 ml-2 sm:ml-4 text-xs sm:text-sm text-gray-600 flex-1 max-w-xs truncate">
                     fahrschule-schmidt.de
                   </div>
                 </div>
                 
                 {/* Website Content Simulation */}
-                <div className="bg-white rounded-2xl p-6 min-h-[500px] relative shadow-lg">
-                  <div className="max-w-md mx-auto">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 min-h-[400px] sm:min-h-[500px] relative shadow-lg">
+                  <div className="max-w-sm sm:max-w-md mx-auto">
                     <div className="h-6 bg-gray-300 rounded w-3/4 mb-4"></div>
                     <div className="space-y-2 mb-6">
                       <div className="h-3 bg-gray-200 rounded w-full"></div>
@@ -201,13 +246,29 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Live Chatbot Demo */}
-                  <div className="absolute bottom-4 right-4">
+                  {/* Live Chatbot Demo - Hidden on mobile, responsive on larger screens */}
+                  <div className="hidden lg:block absolute bottom-4 right-4">
                     <iframe
                       src="/chatbot-demo"
-                      className="w-96 h-[500px] border-none rounded-2xl shadow-2xl"
+                      className="w-80 xl:w-96 h-[450px] xl:h-[500px] border-none rounded-2xl shadow-2xl"
                       title="Live AI Chatbot Demo"
                     />
+                  </div>
+
+                  {/* Mobile Demo Placeholder */}
+                  <div className="lg:hidden absolute bottom-4 right-4 bg-white rounded-2xl shadow-2xl border-2 border-orange/20 p-4 w-60 h-40">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-8 h-8 bg-orange rounded-full flex items-center justify-center">
+                        <MessageCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="font-semibold text-gray-800 text-sm">AI Chatbot</span>
+                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      Testen Sie den Live-Chatbot auf Desktop-Geräten oder melden Sie sich an für den vollständigen Zugang.
+                    </p>
+                    <div className="absolute bottom-2 right-2">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    </div>
                   </div>
 
                 </div>
@@ -247,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* Features Section - Modernized */}
-      <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="features" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -256,10 +317,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Warum <span className="text-orange">Chatvise</span>?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Mehr Support, mehr Kunden, mehr Umsatz
             </p>
           </motion.div>
@@ -269,7 +330,7 @@ export default function Home() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           >
             {features.map((feature, index) => {
               const IconComponent = iconMap[feature.icon as keyof typeof iconMap]
@@ -307,7 +368,7 @@ export default function Home() {
 
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm">
+      <section id="pricing" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -316,10 +377,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
               Transparente Preise für jeden Bedarf
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Kostenlos starten, passenden Plan wählen
             </p>
           </motion.div>
@@ -329,7 +390,7 @@ export default function Home() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
           >
             {pricingCards.map((card, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -384,7 +445,7 @@ export default function Home() {
       </section>
 
              {/* Kontakt Section */}
-       <section id="kontakt" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+       <section id="kontakt" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
          <div className="container mx-auto max-w-6xl">
            <motion.div
              initial={{ opacity: 0, y: 20 }}
@@ -393,15 +454,15 @@ export default function Home() {
              viewport={{ once: true }}
              className="text-center mb-16"
            >
-             <h2 className="text-4xl font-bold text-gray-900 mb-6">
+             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                Kontakt aufnehmen
              </h2>
-             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                Fragen? Wir helfen gerne weiter.
              </p>
            </motion.div>
 
-           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-start">
              {/* Contact Info */}
              <motion.div
                initial={{ opacity: 0, x: -60 }}
@@ -411,8 +472,8 @@ export default function Home() {
                className="lg:col-span-1 space-y-8"
              >
                <div>
-                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Sprechen Sie mit uns</h3>
-                 <div className="space-y-6">
+                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Sprechen Sie mit uns</h3>
+                 <div className="space-y-4 sm:space-y-6">
                    <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
                      <div className="w-12 h-12 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
                        <svg className="w-6 h-6 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -441,7 +502,7 @@ export default function Home() {
 
                {/* Social Media */}
                <div>
-                 <h4 className="text-lg font-semibold text-gray-900 mb-4">Folgen Sie uns</h4>
+                 <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Folgen Sie uns</h4>
                  <div className="flex gap-4">
                    <a 
                      href="#" 
@@ -483,64 +544,24 @@ export default function Home() {
                className="lg:col-span-2"
              >
                
-                               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+                               <div className="flex justify-center h-full">
                   {/* Chester Roussos Profile */}
-                  <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-xl h-full">
-                   <div className="w-32 h-32 rounded-full border-4 border-orange bg-gradient-to-br from-orange/10 to-orange/5 flex items-center justify-center overflow-hidden">
-                     <svg className="w-16 h-16 text-orange/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex flex-col items-center text-center space-y-4 p-4 sm:p-6 bg-gray-50 rounded-xl h-full max-w-md mx-auto">
+                   <div className="w-24 sm:w-32 h-24 sm:h-32 rounded-full border-4 border-orange bg-gradient-to-br from-orange/10 to-orange/5 flex items-center justify-center overflow-hidden">
+                     <svg className="w-12 sm:w-16 h-12 sm:h-16 text-orange/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                      </svg>
                    </div>
                    <div className="space-y-2">
-                     <div className="flex items-center justify-center gap-2">
-                       <h4 className="text-xl font-bold text-gray-900">Chester Roussos</h4>
-                       <a 
-                         href="https://twitter.com/chesterroussos" 
-                         target="_blank" 
-                         rel="noopener noreferrer"
-                         className="text-gray-600 hover:text-orange transition-colors"
-                       >
-                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                         </svg>
-                       </a>
-                     </div>
-                     <p className="text-orange font-semibold text-sm">Gründer & CEO</p>
+                     <h4 className="text-lg sm:text-xl font-bold text-gray-900">Chester Roussos</h4>
+                     <p className="text-orange font-semibold text-sm">Inhaber</p>
                      <p className="text-gray-600 text-sm leading-relaxed">
-                       Erfahrener Unternehmer mit Expertise in Finanzen. 
-                       Führt Chatvise mit der Vision, Kundensupport zu revolutionieren.
+                       Unternehmer mit Hintergrund in Wirtschaft und Finanzen sowie erfahrener Webentwickler 
+                       mit Fokus auf KI-Anwendungen und Automatisierung.
                      </p>
                    </div>
                  </div>
 
-                                   {/* Fabian Duwe Profile */}
-                  <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-xl h-full">
-                   <div className="w-32 h-32 rounded-full border-4 border-orange bg-gradient-to-br from-orange/10 to-orange/5 flex items-center justify-center overflow-hidden">
-                     <svg className="w-16 h-16 text-orange/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                     </svg>
-                   </div>
-                   <div className="space-y-2">
-                     <div className="flex items-center justify-center gap-2">
-                       <h4 className="text-xl font-bold text-gray-900">Fabian Duwe</h4>
-                       <a 
-                         href="https://twitter.com/fabianduwe" 
-                         target="_blank" 
-                         rel="noopener noreferrer"
-                         className="text-gray-600 hover:text-orange transition-colors"
-                       >
-                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                         </svg>
-                       </a>
-                     </div>
-                     <p className="text-orange font-semibold text-sm">Entwickler & Lead Developer</p>
-                     <p className="text-gray-600 text-sm leading-relaxed">
-                       Leidenschaftlicher Entwickler mit jahrelanger Erfahrung in KI und Webentwicklung. 
-     
-                     </p>
-                   </div>
-                 </div>
                </div>
              </motion.div>
            </div>
@@ -548,12 +569,12 @@ export default function Home() {
        </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-900 text-white py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
             {/* Brand */}
                          <div className="md:col-span-2">
-                               <Link href="/" className="flex items-center gap-3 mb-6">
+                               <Link href="/" className="flex items-center gap-3 mb-4 sm:mb-6">
                   <div className="bg-white rounded-lg">
                     <Image
                       src="/images/logo.png"
@@ -567,12 +588,12 @@ export default function Home() {
                    Chatvise
                  </span>
                </Link>
-              <p className="text-gray-400 mb-6 max-w-md">
+              <p className="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base">
                 Ihr intelligenter KI-Chatbot für automatisierten Kundensupport, Lead-Generierung und Umsatzsteigerung. 24/7 verfügbar, einfach zu integrieren.
               </p>
               <div className="flex gap-4">
                 <Link href="/auth/sign-up">
-                  <Button className="bg-gradient-to-r from-orange to-orange/80 hover:from-orange/90 hover:to-orange/70 text-white font-medium px-6 rounded-full">
+                  <Button className="bg-gradient-to-r from-orange to-orange/80 hover:from-orange/90 hover:to-orange/70 text-white font-medium px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full">
                     Kostenlos testen
                   </Button>
                 </Link>
@@ -581,8 +602,8 @@ export default function Home() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-6">Navigation</h3>
-              <ul className="space-y-3">
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Navigation</h3>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
                 <li>
                   <button
                     onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
@@ -617,8 +638,8 @@ export default function Home() {
 
             {/* Legal Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-6">Rechtliches</h3>
-              <ul className="space-y-3">
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Rechtliches</h3>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
                 <li>
                   <Link href="/impressum" className="text-gray-400 hover:text-orange transition-colors">
                     Impressum
@@ -649,8 +670,8 @@ export default function Home() {
           </div>
 
                      {/* Bottom Bar */}
-           <div className="border-t border-gray-800 mt-12 pt-8 flex justify-center">
-             <p className="text-gray-400 text-sm">
+           <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex justify-center">
+             <p className="text-gray-400 text-xs sm:text-sm text-center">
                © 2025 Chatvise. Alle Rechte vorbehalten.
              </p>
            </div>

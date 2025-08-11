@@ -1,0 +1,6 @@
+Contact: mailto:chesterroussos.business@gmail.com
+Contact: https://chatvise.de/impressum
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: de, en
+Canonical: https://chatvise.de/.well-known/security.txt
+Policy: https://chatvise.de/datenschutz
