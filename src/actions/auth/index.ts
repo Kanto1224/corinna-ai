@@ -10,6 +10,18 @@ export const onCompleteUserRegistration = async (
   type: string
 ) => {
   try {
+    console.log('Creating user in database:', { fullname, clerkId, type })
+    
+    // Check if user already exists
+    const existingUser = await client.user.findUnique({
+      where: { clerkId },
+    })
+    
+    if (existingUser) {
+      console.log('User already exists in database')
+      return { status: 200, user: existingUser }
+    }
+    
     const registered = await client.user.create({
       data: {
         fullname,
@@ -26,11 +38,19 @@ export const onCompleteUserRegistration = async (
       },
     })
 
+    console.log('User created successfully:', registered)
+    
     if (registered) {
       return { status: 200, user: registered }
     }
-  } catch (error) {
-    return { status: 400 }
+    
+    return { status: 400, error: 'User creation failed' }
+  } catch (error: any) {
+    console.error('Database registration error:', error)
+    return { 
+      status: 400, 
+      error: error.message || 'Database error occurred'
+    }
   }
 }
 

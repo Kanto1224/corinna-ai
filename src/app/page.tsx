@@ -137,7 +137,7 @@ export default function Home() {
                                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
                    Integrieren Sie unseren intelligenten Chatbot in <span className="text-orange font-semibold">jede beliebige Website</span>. 
                    <br className="hidden sm:block" /><br className="hidden sm:block" />
-                   Automatisieren Sie <span className="text-orange font-semibold">Kundensupport</span>, Beratungsgespräche, generieren Sie Leads und steigern Sie Ihren Umsatz - 24/7 verfügbar.
+                   Automatisieren Sie <span className="text-orange font-semibold">Kundensupport</span>, <span className="text-orange font-semibold">Beratungsgespräche</span>, generieren Sie <span className="text-orange font-semibold">Leads</span> und steigern Sie Ihren <span className="text-orange font-semibold">Umsatz</span>.
                  </p>
               </motion.div>
 

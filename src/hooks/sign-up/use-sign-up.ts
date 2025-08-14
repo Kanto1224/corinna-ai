@@ -43,27 +43,57 @@ export const useSignUpForm = () => {
     } catch (error: any) {
       toast({
         title: 'Error',
-        description: error.errors[0].longMessage,
+        description: error?.errors?.[0]?.longMessage || 'Failed to send OTP. Please try again.',
       })
     }
   }
 
   const onHandleSubmit = methods.handleSubmit(
     async (values: UserRegistrationProps) => {
-      if (!isLoaded) return
+      console.log('Form submitted with values:', values)
+      console.log('OTP value:', values.otp)
+      
+      if (!isLoaded) {
+        console.log('Clerk not loaded yet')
+        return
+      }
+
+      if (!values.otp || values.otp.length !== 6) {
+        toast({
+          title: 'Invalid OTP',
+          description: 'Please enter a 6-digit OTP code',
+        })
+        return
+      }
 
       try {
         setLoading(true)
+        console.log('Attempting email verification with OTP:', values.otp)
+        
         const completeSignUp = await signUp.attemptEmailAddressVerification({
           code: values.otp,
         })
+        
+        console.log('Verification result:', completeSignUp)
 
         if (completeSignUp.status !== 'complete') {
-          return { message: 'Something went wrong!' }
+          setLoading(false)
+          toast({
+            title: 'Error',
+            description: 'Email verification failed. Please try again.',
+          })
+          return
         }
 
         if (completeSignUp.status == 'complete') {
-          if (!signUp.createdUserId) return
+          if (!signUp.createdUserId) {
+            setLoading(false)
+            toast({
+              title: 'Error',
+              description: 'User ID not found. Please try again.',
+            })
+            return
+          }
 
           const registered = await onCompleteUserRegistration(
             values.fullname,
@@ -78,19 +108,29 @@ export const useSignUpForm = () => {
 
             setLoading(false)
             router.push('/dashboard')
-          }
-
-          if (registered?.status == 400) {
+          } else {
+            setLoading(false)
             toast({
               title: 'Error',
-              description: 'Something went wrong!',
+              description: 'Registration failed. Please try again.',
             })
           }
         }
       } catch (error: any) {
+        setLoading(false)
         toast({
           title: 'Error',
-          description: error.errors[0].longMessage,
+          description: error?.errors?.[0]?.longMessage || error?.message || 'Registration failed. Please try again.',
+        })
+      }
+    },
+    (formErrors) => {
+      console.log('Form validation errors:', formErrors)
+      // Handle validation errors
+      if (formErrors.otp) {
+        toast({
+          title: 'OTP Required',
+          description: 'Please enter the 6-digit OTP code from your email',
         })
       }
     }

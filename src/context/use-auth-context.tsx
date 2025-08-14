@@ -20,9 +20,8 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode
 }) => {
-  const [currentStep, setCurrentStep] = useState<number>(
-    InitialValues.currentStep
-  )
+  const [currentStep, setCurrentStep] = useState<number>(1)
+  
   const values = {
     currentStep,
     setCurrentStep,

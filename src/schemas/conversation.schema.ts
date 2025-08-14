@@ -11,11 +11,10 @@ export type ChatBotMessageProps = {
   image?: any
 }
 
-export const ConversationSearchSchema: ZodType<ConversationSearchProps> =
-  z.object({
+export const ConversationSearchSchema: ZodType<ConversationSearchProps> = z.object({
     query: z.string().min(1, { message: 'You must entery a search query' }),
     domain: z.string().min(1, { message: 'You must select a domain' }),
-  })
+  }) as ZodType<ConversationSearchProps>
 
 export const ChatBotMessageSchema: ZodType<ChatBotMessageProps> = z
   .object({
@@ -38,4 +37,4 @@ export const ChatBotMessageSchema: ZodType<ChatBotMessageProps> = z
     if (!schema.image?.length) {
       return true
     }
-  })
+  }) as ZodType<ChatBotMessageProps>

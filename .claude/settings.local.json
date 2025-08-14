@@ -5,8 +5,17 @@
       "Bash(npm run dev:*)",
       "Bash(rm:*)",
       "Bash(npm run lint)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(netlify:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx prisma generate:*)",
+      "WebFetch(domain:chatvise-ai-deploy.netlify.app)",
+      "WebFetch(domain:localhost)",
+      "Bash(npx tsc:*)",
+      "Bash(timeout 60 npm run build)",
+      "Bash(git add:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   }
 }

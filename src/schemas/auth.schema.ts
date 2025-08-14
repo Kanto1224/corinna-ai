@@ -38,7 +38,7 @@ export const UserRegistrationSchema: ZodType<UserRegistrationProps> = z
   .refine((schema) => schema.email === schema.confirmEmail, {
     message: 'Your emails not match',
     path: ['confirmEmail'],
-  })
+  }) as ZodType<UserRegistrationProps>
 
 export type UserLoginProps = {
   email: string
@@ -58,7 +58,7 @@ export const UserLoginSchema: ZodType<UserLoginProps> = z.object({
     .max(64, {
       message: 'Your password can not be longer then 64 characters long',
     }),
-})
+}) as ZodType<UserLoginProps>
 
 export const ChangePasswordSchema: ZodType<ChangePasswordProps> = z
   .object({
@@ -77,4 +77,4 @@ export const ChangePasswordSchema: ZodType<ChangePasswordProps> = z
   .refine((schema) => schema.password === schema.confirmPassword, {
     message: 'passwords do not match',
     path: ['confirmPassword'],
-  })
+  }) as ZodType<ChangePasswordProps>
