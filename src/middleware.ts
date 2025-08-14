@@ -1,25 +1,14 @@
 // middleware.ts
-import { authMiddleware } from '@clerk/nextjs'
+import { authMiddleware } from '@clerk/nextjs';
 
 export default authMiddleware({
-  publicRoutes: [
-    '/',
-    // Be explicit with the exact pages first
-    '/auth/sign-in',
-    '/auth/sign-up',
-    // Add a wildcard for any API routes Clerk might use internally
-    '/api/auth/(.*)', 
-    '/portal/(.*)',
-    '/images/(.*)',
-    '/impressum',
-    '/wiederrufsrecht',
-    '/agb',
-    '/zahlungen-versand',
-    '/datenschutz',
-  ],
-  ignoredRoutes: ['/chatbot', '/chatbot-demo', '/api/chatbot-demo'],
-})
+  // By default, all routes are public. 
+  // We only specify which routes to PROTECT.
+  // This is the opposite of using publicRoutes.
+});
 
 export const config = {
-  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
-}
+  // This matcher protects only the routes starting with /dashboard
+  // It specifically ignores all other routes, including /auth
+  matcher: ['/dashboard/:path*'], 
+};
