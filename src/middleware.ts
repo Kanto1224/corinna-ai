@@ -4,10 +4,13 @@ import { authMiddleware } from '@clerk/nextjs'
 export default authMiddleware({
   publicRoutes: [
     '/',
-    // This now correctly matches /auth, /auth/sign-up, /auth/sign-in, etc.
-    '/auth/(.*)', 
-    '/portal/(.*)', // Also updated this for consistency
-    '/images/(.*)', // And this one
+    // Be explicit with the exact pages first
+    '/auth/sign-in',
+    '/auth/sign-up',
+    // Add a wildcard for any API routes Clerk might use internally
+    '/api/auth/(.*)', 
+    '/portal/(.*)',
+    '/images/(.*)',
     '/impressum',
     '/wiederrufsrecht',
     '/agb',
