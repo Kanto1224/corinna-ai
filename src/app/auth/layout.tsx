@@ -1,4 +1,5 @@
 import { currentUser } from '@clerk/nextjs'
+
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import React from 'react'
@@ -8,10 +9,9 @@ type Props = {
 }
 
 const Layout = async ({ children }: Props) => {
-  // Remove the redirect during registration process
+  // Remove the redirect during registration process to allow OTP verification
   // const user = await currentUser()
   // if (user) redirect('/')
-
   return (
     <div className="h-screen flex w-full justify-center">
       <div className="w-[600px] ld:w-full flex flex-col items-start p-6">

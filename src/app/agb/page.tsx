@@ -81,10 +81,10 @@ export default function AGBPage() {
                     </p>
                     <div className="bg-gray-50 p-4 rounded-lg space-y-3 ml-4">
                       <p>
-                        Die zum Kauf beabsichtigten digitalen Inhalte werden im „Warenkorb" abgelegt. Über die 
-                        entsprechende Schaltfläche in der Navigationsleiste können Sie den „Warenkorb" aufrufen und 
-                        dort jederzeit Änderungen vornehmen. Nach Anklicken der Schaltfläche "Kasse" oder "Weiter zur 
-                        Bestellung" (oder ähnliche Bezeichnung) und der Eingabe der persönlichen Daten sowie der 
+                        Die zum Kauf beabsichtigten digitalen Inhalte werden im &bdquo;Warenkorb&ldquo; abgelegt. Über die 
+                        entsprechende Schaltfläche in der Navigationsleiste können Sie den &bdquo;Warenkorb&ldquo; aufrufen und 
+                        dort jederzeit Änderungen vornehmen. Nach Anklicken der Schaltfläche &ldquo;Kasse&rdquo; oder &ldquo;Weiter zur 
+                        Bestellung&rdquo; (oder ähnliche Bezeichnung) und der Eingabe der persönlichen Daten sowie der 
                         Zahlungsbedingungen werden Ihnen abschließend die Bestelldaten als Bestellübersicht angezeigt.
                       </p>
                       <p>
@@ -100,12 +100,12 @@ export default function AGBPage() {
                       </p>
                       <p>
                         Vor Absenden der Bestellung haben Sie die Möglichkeit, die Angaben in der Bestellübersicht nochmals 
-                        zu überprüfen, zu ändern (auch über die Funktion „zurück" des Internetbrowsers) bzw. die Bestellung 
+                        zu überprüfen, zu ändern (auch über die Funktion &bdquo;zurück&ldquo; des Internetbrowsers) bzw. die Bestellung 
                         abzubrechen.
                       </p>
                       <p>
-                        Mit dem Absenden der Bestellung über die entsprechende Schaltfläche ("zahlungspflichtig bestellen", 
-                        "kaufen" / "jetzt kaufen", "kostenpflichtig bestellen", "bezahlen" / "jetzt bezahlen" oder ähnliche 
+                        Mit dem Absenden der Bestellung über die entsprechende Schaltfläche (&ldquo;zahlungspflichtig bestellen&rdquo;, 
+                        &ldquo;kaufen&rdquo; / &ldquo;jetzt kaufen&rdquo;, &ldquo;kostenpflichtig bestellen&rdquo;, &ldquo;bezahlen&rdquo; / &ldquo;jetzt bezahlen&rdquo; oder ähnliche 
                         Bezeichnung) erklären Sie rechtsverbindlich die Annahme des Angebotes, wodurch der Vertrag zustande kommt.
                       </p>
                     </div>
@@ -166,7 +166,7 @@ export default function AGBPage() {
                   </p>
                   <p>
                     <span className="font-medium">(3)</span> Jede Kündigung muss entweder in Textform (z.B. E-Mail) 
-                    oder über die auf unserer Internetpräsenz eingebundene Kündigungsschaltfläche ("Verträge hier kündigen" 
+                    oder über die auf unserer Internetpräsenz eingebundene Kündigungsschaltfläche (&ldquo;Verträge hier kündigen&rdquo; 
                     oder ähnliche Bezeichnung) erklärt und übermittelt werden.
                   </p>
                 </div>
@@ -180,16 +180,16 @@ export default function AGBPage() {
                 <div className="space-y-4 text-gray-600">
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-2">
-                      (1) Zahlung über "PayPal" / "PayPal Checkout"
+                      (1) Zahlung über &ldquo;PayPal&rdquo; / &ldquo;PayPal Checkout&rdquo;
                     </h4>
                     <p className="ml-4">
-                      Bei Auswahl einer Zahlungsart, die über "PayPal" / "PayPal Checkout" angeboten wird, erfolgt die 
+                      Bei Auswahl einer Zahlungsart, die über &ldquo;PayPal&rdquo; / &ldquo;PayPal Checkout&rdquo; angeboten wird, erfolgt die 
                       Zahlungsabwicklung über den Zahlungsdienstleister PayPal (Europe) S.à.r.l. et Cie, S.C.A. 
-                      (22-24 Boulevard Royal L-2449, Luxemburg; "PayPal"). Die einzelnen Zahlungsarten über "PayPal" 
+                      (22-24 Boulevard Royal L-2449, Luxemburg; &ldquo;PayPal&rdquo;). Die einzelnen Zahlungsarten über &ldquo;PayPal&rdquo; 
                       werden Ihnen unter einer entsprechend bezeichneten Schaltfläche auf unserer Internetpräsenz sowie 
-                      im Online-Bestellvorgang angezeigt. Für die Zahlungsabwicklung kann sich "PayPal" weiterer 
+                      im Online-Bestellvorgang angezeigt. Für die Zahlungsabwicklung kann sich &ldquo;PayPal&rdquo; weiterer 
                       Zahlungsdienste bedienen; soweit hierfür besondere Zahlungsbedingungen gelten, werden Sie auf 
-                      diese gesondert hingewiesen. Nähere Informationen zu "PayPal" finden Sie unter{' '}
+                      diese gesondert hingewiesen. Nähere Informationen zu &ldquo;PayPal&rdquo; finden Sie unter{' '}
                       <a href="https://www.paypal.com/de/webapps/mpp/ua/legalhub-full" 
                          className="text-orange hover:text-orange/80 transition-colors break-all">
                         https://www.paypal.com/de/webapps/mpp/ua/legalhub-full
@@ -198,16 +198,16 @@ export default function AGBPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-2">
-                      (2) Zahlung über "Stripe"
+                      (2) Zahlung über &ldquo;Stripe&rdquo;
                     </h4>
                     <p className="ml-4">
-                      Bei Auswahl einer Zahlungsart, die über "Stripe" angeboten wird, erfolgt die Zahlungsabwicklung 
+                      Bei Auswahl einer Zahlungsart, die über &ldquo;Stripe&rdquo; angeboten wird, erfolgt die Zahlungsabwicklung 
                       über den Zahlungsdienstleister Stripe Payments Europe Limited (1 Grand Canal Street Lower, 
-                      Grand Canal Dock, Dublin, D02 H210, Ireland; "Stripe"). Die einzelnen Zahlungsarten über "Stripe" 
+                      Grand Canal Dock, Dublin, D02 H210, Ireland; &ldquo;Stripe&rdquo;). Die einzelnen Zahlungsarten über &ldquo;Stripe&rdquo; 
                       werden Ihnen unter einer entsprechend bezeichneten Schaltfläche auf unserer Internetpräsenz sowie 
-                      im Online-Bestellvorgang angezeigt. Für die Zahlungsabwicklung kann sich "Stripe" weiterer 
+                      im Online-Bestellvorgang angezeigt. Für die Zahlungsabwicklung kann sich &ldquo;Stripe&rdquo; weiterer 
                       Zahlungsdienste bedienen; soweit hierfür besondere Zahlungsbedingungen gelten, werden Sie auf 
-                      diese gesondert hingewiesen. Nähere Informationen zu "Stripe" finden Sie unter{' '}
+                      diese gesondert hingewiesen. Nähere Informationen zu &ldquo;Stripe&rdquo; finden Sie unter{' '}
                       <a href="https://stripe.com/de" 
                          className="text-orange hover:text-orange/80 transition-colors">
                         https://stripe.com/de
@@ -353,7 +353,7 @@ export default function AGBPage() {
                 </h3>
                 <p className="text-gray-600">
                   Die technischen Schritte zum Vertragsschluss, der Vertragsschluss selbst und die 
-                  Korrekturmöglichkeiten erfolgen nach Maßgabe der Regelungen "Zustandekommen des Vertrages" 
+                  Korrekturmöglichkeiten erfolgen nach Maßgabe der Regelungen &ldquo;Zustandekommen des Vertrages&rdquo; 
                   unserer Allgemeinen Geschäftsbedingungen (Teil I.).
                 </p>
               </section>
@@ -432,7 +432,7 @@ export default function AGBPage() {
                   7. Gesetzliches Mängelhaftungsrecht
                 </h3>
                 <p className="text-gray-600">
-                  Die Mängelhaftung richtet sich nach der Regelung "Gewährleistung" in unseren Allgemeinen 
+                  Die Mängelhaftung richtet sich nach der Regelung &ldquo;Gewährleistung&rdquo; in unseren Allgemeinen 
                   Geschäftsbedingungen (Teil I).
                 </p>
               </section>
@@ -444,7 +444,7 @@ export default function AGBPage() {
                 </h3>
                 <p className="text-gray-600">
                   Informationen zur Laufzeit des Vertrages sowie den Kündigungsbedingungen finden Sie in der 
-                  Regelung "Vertragslaufzeit / Kündigung bei Abonnement-Verträgen" in unseren Allgemeinen 
+                  Regelung &ldquo;Vertragslaufzeit / Kündigung bei Abonnement-Verträgen&rdquo; in unseren Allgemeinen 
                   Geschäftsbedingungen (Teil I) sowie im jeweiligen Angebot.
                 </p>
               </section>

@@ -1,21 +1,14 @@
-import { authMiddleware } from '@clerk/nextjs'
+// middleware.ts
+import { authMiddleware } from '@clerk/nextjs';
 
 export default authMiddleware({
-  publicRoutes: [
-    '/', 
-    '/auth(.*)', 
-    '/portal(.*)', 
-    '/images(.*)',
-    '/impressum',
-    '/wiederrufsrecht',
-    '/agb',
-    '/zahlungen-versand',
-    '/datenschutz',
-    '/favicon.ico'
-  ],
-  ignoredRoutes: ['/chatbot', '/chatbot-demo', '/api/chatbot-demo'],
-})
+  // By default, all routes are public. 
+  // We only specify which routes to PROTECT.
+  // This is the opposite of using publicRoutes.
+});
 
 export const config = {
-  matcher: ['/((?!.+.[w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
-}
+  // This matcher protects only the routes starting with /dashboard
+  // It specifically ignores all other routes, including /auth
+  matcher: ['/dashboard/:path*'], 
+};

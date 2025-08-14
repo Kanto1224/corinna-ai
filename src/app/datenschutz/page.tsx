@@ -35,7 +35,7 @@ export default function DatenschutzPage() {
                 Dies gilt nur soweit bei den nachfolgenden Verarbeitungsvorgängen keine anderweitige Angabe gemacht wird.
               </p>
               <p className="text-gray-600">
-                <span className="font-medium">"Personenbezogene Daten"</span> sind alle Informationen, die sich auf eine 
+                <span className="font-medium">&ldquo;Personenbezogene Daten&rdquo;</span> sind alle Informationen, die sich auf eine 
                 identifizierte oder identifizierbare natürliche Person beziehen.
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function DatenschutzPage() {
                   <div className="space-y-3 text-gray-600">
                     <p>
                       Auf unserer Webseite ist das Websitelogo für Google Kundenrezensionen der Google LLC 
-                      (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; „Google") eingebunden.
+                      (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; &bdquo;Google&ldquo;) eingebunden.
                     </p>
                     <p>
                       Die Einbindung dient dem Zweck, Anzahl und Ergebnis unsere bisher über Google erhaltenen Bewertungen 
@@ -217,7 +217,7 @@ export default function DatenschutzPage() {
                   <div className="space-y-3 text-gray-600">
                     <p>
                       Wir verwenden auf unserer Website den Zahlungsdienst PayPal Check-Out der PayPal (Europe) S.à.r.l. 
-                      et Cie, S.C.A. (22-24 Boulevard Royal L-2449, Luxemburg; "PayPal").
+                      et Cie, S.C.A. (22-24 Boulevard Royal L-2449, Luxemburg; &ldquo;PayPal&rdquo;).
                     </p>
                     <p>
                       Mit Auswahl und Nutzung von Zahlung via PayPal werden die zur Zahlungsabwicklung erforderlichen 
@@ -225,7 +225,7 @@ export default function DatenschutzPage() {
                       Diese Verarbeitung erfolgt auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO.
                     </p>
                     <p>
-                      Bei einzelnen Zahlungsarten wie Kreditkarte via PayPal, Lastschrift via PayPal oder „Später bezahlen" 
+                      Bei einzelnen Zahlungsarten wie Kreditkarte via PayPal, Lastschrift via PayPal oder &bdquo;Später bezahlen&rdquo; 
                       via PayPal behält sich PayPal das Recht vor, ggf. eine Bonitätsauskunft einzuholen.
                     </p>
                     <p>
@@ -269,7 +269,7 @@ export default function DatenschutzPage() {
               <div className="space-y-3 text-gray-600">
                 <p>
                   Wir verwenden auf unserer Website Google Fonts der Google Ireland Limited 
-                  (Gordon House, Barrow Street, Dublin 4, Irland; "Google").
+                  (Gordon House, Barrow Street, Dublin 4, Irland; &ldquo;Google&rdquo;).
                 </p>
                 <p>
                   Die Datenverarbeitung dient dem Zweck der einheitlichen Darstellung von Schriftarten auf unserer Website. 
