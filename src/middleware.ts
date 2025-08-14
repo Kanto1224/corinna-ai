@@ -4,22 +4,19 @@ import { authMiddleware } from '@clerk/nextjs'
 export default authMiddleware({
   publicRoutes: [
     '/',
-    '/auth(.*)',
-    '/portal(.*)',
-    '/images(.*)',
+    // This now correctly matches /auth, /auth/sign-up, /auth/sign-in, etc.
+    '/auth/(.*)', 
+    '/portal/(.*)', // Also updated this for consistency
+    '/images/(.*)', // And this one
     '/impressum',
     '/wiederrufsrecht',
     '/agb',
     '/zahlungen-versand',
     '/datenschutz',
   ],
-  // Note: /favicon.ico has been removed from publicRoutes
-
   ignoredRoutes: ['/chatbot', '/chatbot-demo', '/api/chatbot-demo'],
 })
 
 export const config = {
-  // This updated matcher correctly ignores files with extensions (like .ico, .png) 
-  // and special Next.js folders.
   matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 }
